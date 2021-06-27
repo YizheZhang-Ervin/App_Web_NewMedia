@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <link rel="stylesheet" href="index.css">
+        <title>NIA7</title>
+    </head>
+
+    <body>
+        <section id="app">
+            <!-- 页头 -->
+            <header>
+                <el-menu :default-active="1" mode="horizontal" @select="changePage" background-color="darkslateblue"
+                    text-color="#fff" active-text-color="#ffd04b">
+                    <el-menu-item index="1">主页</el-menu-item>
+                    <el-submenu index="2">
+                        <template slot="title">网站导航菜单</template>
+                        <el-menu-item index="2-1">干坏事</el-menu-item>
+                        <el-menu-item index="2-2">做好事</el-menu-item>
+                        <el-menu-item index="2-3">不做事</el-menu-item>
+                        <el-submenu index="2-4">
+                            <template slot="title">其他事</template>
+                            <el-menu-item index="2-4-1">吃饭</el-menu-item>
+                            <el-menu-item index="2-4-2">睡觉</el-menu-item>
+                            <el-menu-item index="2-4-3">打豆豆</el-menu-item>
+                        </el-submenu>
+                    </el-submenu>
+                    <el-menu-item index="3" disabled>菜单开发中···</el-menu-item>
+                    <el-menu-item index="4"><a href="https://ervinzhang.pythonanywhere.com" target="_blank">超链接测试···</a>
+                    </el-menu-item>
+                </el-menu>
+            </header>
+            <!-- 主体 -->
+            <main class="main">
+                <el-carousel :interval="2000" arrow="always" type="card">
+                    <el-carousel-item v-for="item in pics" :key="item" class="center">
+                        <img :src=item class="wh100"></img>
+                    </el-carousel-item>
+                </el-carousel>
+            </main>
+            <!-- 页尾 -->
+            <footer class="footer center">
+                NIA7 Group @2021 Made In Suzhou By NIA7
+            </footer>
+            <el-backtop></el-backtop>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.21.0/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+        <script src="index.js" async="async"></script>
+    </body>
+
+</html>
