@@ -6,6 +6,9 @@ var app = new Vue({
             mouseY: 0,
             currentEle: "",
             input001:"",
+            postResult:"",
+            drawer: false,
+            textarea:"",
             pics:[
                 "./resources/sky.jpg",
                 "./resources/colin.jpg",
@@ -115,6 +118,27 @@ var app = new Vue({
                     alert("prevent F12")
                 }
             })
-        }
+        },
+        post(url){
+            axios.post(`/api/${url}/`, { key: JSON.stringify(this.textarea) })
+                .then((response) => {
+                    if (response.data.error == "error") {
+                        console.log("bakend error");
+                    } else {
+                        if(url=="shell"){
+                            this.postResult = eval(response.data.result);
+                        }else{
+                            this.postResult = response.data.result;
+                        }
+                        let pre001 = document.getElementById("pre001");
+                        console.log(pre001);
+                        pre001.innerHTML = this.postResult;
+                    }
+                },
+                    function (err) {
+                        console.log(err.data);
+                    }
+                );
+        },
     }
 });

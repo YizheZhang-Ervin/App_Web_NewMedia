@@ -9,15 +9,29 @@ const middlewares = require("./server/middlewares");
 middlewares(app);
 
 // 端口
-const port = normalizePort(process.env.PORT || '3000');
+let tempPort;
+// 如果输入了端口号，则提取出来
+if (typeof (process.argv[2]) !== 'undefined') {
+    // 如果端口号不为数字，提示格式错误
+    if (isNaN(process.argv[2])) {
+        throw 'Please write a correct port number.';
+    } else {
+        // 如果端口号输入正确，将其应用到端口
+        tempPort = process.argv[2];
+    }
+} else if (process.env.PORT) {
+    tempPort = process.env.PORT
+} else {
+    // 如果未输入端口号，则使用下面定义的默认端口
+    tempPort = 3000;
+}
+const port = normalizePort(tempPort);
 function normalizePort(val) {
     var port = parseInt(val, 10);
-
     if (isNaN(port)) {
         // named pipe
         return val;
     }
-
     if (port >= 0) {
         // port number
         return port;
@@ -32,18 +46,21 @@ function normalizePort(val) {
 
 // 使用证书
 let httpsServer;
-try{
-    var privateCrt = fs.readFileSync(path.join(process.cwd(), 'https/1_www.kakayang.cn_bundle.crt'), 'utf8');
-    var privateKey = fs.readFileSync(path.join(process.cwd(), 'https/2_www.kakayang.cn.key'), 'utf8');
+let protocolFlag = "http";
+try {
+    var privateCrt = fs.readFileSync('./key/5838822_games.nia7.cn.pem');
+    var privateKey = fs.readFileSync('./key/5838822_games.nia7.cn.key')
     const HTTPS_OPTOIN = {
-    key: privateKey,
-    cert: privateCrt
+        key: privateKey,
+        cert: privateCrt
     };
     const https = require('https');
     httpsServer = https.createServer(HTTPS_OPTOIN, app);
-}catch(err){
+    protocolFlag = "https";
+} catch (err) {
     const http = require('http');
     httpsServer = http.createServer(app);
+    protocolFlag = "http";
 }
 
 httpsServer.listen(port);
@@ -74,6 +91,6 @@ function onError(error) {
 }
 function onListening() {
     var addr = httpsServer.address();
-    var bind = typeof addr === 'string' ? 'pipe ' + addr : `NodeJS Web Server starts at http://127.0.0.1:${addr.port} ...`;
+    var bind = typeof addr === 'string' ? 'pipe ' + addr : `NodeJS Web Server starts at ${protocolFlag}://localhost:${addr.port} ...`;
     console.log(bind);
 }

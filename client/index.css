@@ -24,3 +24,12 @@
 .wh100{
     height: 100%;
 }
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+.bordered{
+    border: 1px dashed black;
+}

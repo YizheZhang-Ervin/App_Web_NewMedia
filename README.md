@@ -6,13 +6,13 @@ NIA7 Website
 - BackEnd: Express + Mysql
 
 ## Install
-npm install express
-npm install cors
-npm install ejs
-npm install cookie-parser
+- npm install express
+- npm install cors
+- npm install ejs
+- npm install cookie-parser
 
 ## Run
-git clone xxx
-npm install
-npm start
+- git clone xxLink
+- npm install
+- npm start xxPort
 
