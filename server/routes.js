@@ -1,7 +1,9 @@
 let express = require('express');
 let vm = require("vm");
 let exec = require('child_process').exec;
-// var userQuery = require('./models')
+// var userQuery = require('./models');
+
+let stockData = require('../0600000.json')["data"];
 
 let router = express.Router();
 
@@ -16,6 +18,18 @@ let router = express.Router();
 
 router.get('/', function(req, res, next) {
     res.render("index");
+});
+
+router.get('/api/stock/', function(req, res, next) {
+    let data = stockData.map((x)=>{return x.slice(0,6)})
+    // let data = [
+    //     ['2013/1/24', 2320.26, 2320.26, 2287.3, 2362.94, 86160000],
+    //     ['2013/1/25', 2300, 2291.3, 2288.26, 2308.38, 79330000]
+    // ];
+    res.status(200);
+    res.json({
+      result: JSON.stringify(data)
+    });
 });
 
 router.post('/api/js/', function(req, res, next) {

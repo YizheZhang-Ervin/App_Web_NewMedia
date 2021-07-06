@@ -15,19 +15,19 @@
         <section id="app">
             <!-- 页头 -->
             <header>
-                <el-menu :default-active="1" mode="horizontal" @select="changePage" background-color="darkslateblue"
-                    text-color="#fff" active-text-color="#ffd04b">
+                <el-menu :default-active="1" mode="horizontal" @select="changePage" background-color="black"
+                    text-color="gold" active-text-color="#ffd04b">
                     <el-menu-item index="1">主页</el-menu-item>
                     <el-submenu index="2">
                         <template slot="title">网站导航菜单</template>
-                        <el-menu-item index="2-1">干坏事</el-menu-item>
-                        <el-menu-item index="2-2">做好事</el-menu-item>
-                        <el-menu-item index="2-3">不做事</el-menu-item>
+                        <el-menu-item index="visualization">股票</el-menu-item>
+                        <el-menu-item index="2-2">未开放···</el-menu-item>
+                        <el-menu-item index="2-3">未开放···</el-menu-item>
                         <el-submenu index="2-4">
-                            <template slot="title">其他事</template>
-                            <el-menu-item index="2-4-1">吃饭</el-menu-item>
-                            <el-menu-item index="2-4-2">睡觉</el-menu-item>
-                            <el-menu-item index="2-4-3">打豆豆</el-menu-item>
+                            <template slot="title">未开放···</template>
+                            <el-menu-item index="2-4-1">未开放···</el-menu-item>
+                            <el-menu-item index="2-4-2">未开放···</el-menu-item>
+                            <el-menu-item index="2-4-3">未开放···</el-menu-item>
                         </el-submenu>
                     </el-submenu>
                     <el-submenu index="3">
@@ -61,8 +61,8 @@
                         </el-input>
                         <pre id="pre001" style="min-width:50%" class="bordered"></pre>
                     </section>
-                    
                 </el-drawer>
+                <Visualization :msg="displayComponent"></Visualization>
             </main>
             <!-- 页尾 -->
             <footer class="footer center">
@@ -72,8 +72,10 @@
         </section>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios@0.21.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/dist/echarts.min.js"></script>
         <script src="https://unpkg.com/element-ui/lib/index.js"></script>
         <script src="index.js" async="async"></script>
+        <script src="visual.js"></script>
     </body>
 
 </html>

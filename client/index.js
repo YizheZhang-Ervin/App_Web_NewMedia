@@ -15,7 +15,8 @@ var app = new Vue({
                 "./resources/ervin.jpg",
                 "./resources/clj.jpg",
                 "./resources/lqj.jpg"
-            ]
+            ],
+            displayComponent:"visualization"
         }
     },
     mounted() {
@@ -36,8 +37,8 @@ var app = new Vue({
         // 更改显示内容
         changePage(key) {
             switch (key) {
-                case "1":
-                    console.log(key);
+                case "visualization":
+                    this.displayComponent = "visualization";
                     break;
             }
         },
