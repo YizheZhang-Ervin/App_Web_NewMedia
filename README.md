@@ -2,17 +2,8 @@
 NIA7 Website
 
 ## Technology Stack
-- FrontEnd: Vue + ElementUI + Axios
-- BackEnd: Express + Mysql
+- FrontEnd: Vue + ElementUI + Axios + Unity(WebGL)
+- BackEnd: SpringBoot + Actuator/Prometheus/JMX/Druid(暂无)
 
-## Install
-- npm install express
-- npm install cors
-- npm install ejs
-- npm install cookie-parser
-  
 ## Run
-- git clone xxLink
-- npm install
-- npm start xxPort
-
+java -jar lowkey-0.0.1-SNAPSHOT.jar
