@@ -5,26 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f95deff9-f9be-49de-bffe-650492ea11d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0600000.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/clj.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/colin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/ervin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/lqj.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/sky.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/visual.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middlewares.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lowkey/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/Build/Build.data.unityweb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/Build/Build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/Build/Build.wasm.code.unityweb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/Build/Build.wasm.framework.unityweb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/Build/UnityLoader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/UnityProgress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/fullscreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/progressEmpty.Dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/progressEmpty.Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/progressFull.Dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/progressFull.Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/progressLogo.Dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/progressLogo.Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/game1/TemplateData/webgl-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lowkey/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/js/homePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lowkey/src/main/resources/static/js/webglGame.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +61,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -80,10 +89,22 @@
       <option name="presentableId" value="Default" />
       <updated>1641986844274</updated>
       <workItem from="1641986846055" duration="9306000" />
+      <workItem from="1642159287889" duration="1450000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
