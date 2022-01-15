@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ervin.newmediaspring.dao.ArtifactDAO">
+
+    <resultMap id="BaseResultMap" type="com.ervin.newmediaspring.po.ArtifactPO">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="description" jdbcType="VARCHAR" property="description" />
+        <result column="link" jdbcType="VARCHAR" property="link" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="type" jdbcType="VARCHAR" property="type" />
+    </resultMap>
+
+    <select id="getAllArtifact" resultType="com.ervin.newmediaspring.po.ArtifactPO">
+        select *
+        from artifact
+    </select>
+
+    <select id="getArtifactByCondition" resultType="com.ervin.newmediaspring.po.ArtifactPO">
+        select *
+        from artifact
+        where type = #{codition}
+    </select>
+
+    <insert id="createArtifact" parameterType="com.ervin.newmediaspring.po.ArtifactPO">
+        insert into artifact (id,name,description,link,date,type)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+                #{link,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateArtifact" parameterType="com.ervin.newmediaspring.po.ArtifactPO">
+        update artifact
+        set name = #{name},description=#{description},link=#{link},date=#{date},type=#{type}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteArtifact">
+        delete from artifact
+        where id = #{id}
+    </delete>
+
+</mapper>

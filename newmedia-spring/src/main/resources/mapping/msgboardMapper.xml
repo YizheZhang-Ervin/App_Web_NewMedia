@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ervin.newmediaspring.dao.MsgboardDAO">
+    <resultMap id="BaseResultMap" type="com.ervin.newmediaspring.po.MsgboardPO">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="contact" jdbcType="VARCHAR" property="contact" />
+        <result column="content" jdbcType="VARCHAR" property="content" />
+        <result column="date" jdbcType="VARCHAR" property="date" />
+        <result column="other" jdbcType="VARCHAR" property="other" />
+    </resultMap>
+
+    <select id="getAllMsgboard" resultType="com.ervin.newmediaspring.po.MsgboardPO">
+        select *
+        from msgboard
+    </select>
+
+    <insert id="createMsgboard" parameterType="com.ervin.newmediaspring.po.MsgboardPO">
+        insert into msgboard (id,name,contact,content,date,other)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR},
+                #{content,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateMsgboard" parameterType="com.ervin.newmediaspring.po.MsgboardPO">
+        update msgboard
+        set name = #{name},contact=#{contact},content=#{content},date=#{date},other=#{other}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMsgboard">
+        delete from msgboard
+        where id = #{id}
+    </delete>
+
+</mapper>

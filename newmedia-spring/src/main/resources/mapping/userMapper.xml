@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ervin.newmediaspring.dao.UserDAO">
+    <resultMap id="BaseResultMap" type="com.ervin.newmediaspring.po.UserPO">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="authority" jdbcType="VARCHAR" property="authority" />
+        <result column="job" jdbcType="VARCHAR" property="job" />
+        <result column="description" jdbcType="VARCHAR" property="description" />
+    </resultMap>
+
+    <select id="getOneUser" resultType="com.ervin.newmediaspring.po.UserPO">
+        select *
+        from user
+        where name = #{name}
+    </select>
+
+    <select id="getAllUser" resultType="com.ervin.newmediaspring.po.UserPO">
+        select *
+        from user
+    </select>
+
+    <insert id="createUser" parameterType="com.ervin.newmediaspring.po.UserPO">
+        insert into user (id,name,password,authority,job,description)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+                #{authority,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateUser" parameterType="com.ervin.newmediaspring.po.UserPO">
+        update user
+        set name = #{name},password=#{password},authority=#{authority},job=#{job},description=#{description}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from user
+        where id = #{id}
+    </delete>
+
+</mapper>

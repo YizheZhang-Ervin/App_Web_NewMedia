@@ -16,7 +16,7 @@
 						<template slot="title">作品集</template>
 						<el-menu-item index="/artifact/microfilm">微电影</el-menu-item>
 						<el-menu-item index="/artifact/sitcom">情景剧</el-menu-item>
-						<el-menu-item index="/artifact/host">主持 / 演讲</el-menu-item>
+						<el-menu-item index="/artifact/host">主持 / 演讲 / PPT</el-menu-item>
 						<el-menu-item index="/artifact/art">歌 / 舞 / 画 / 乐器</el-menu-item>
 						<el-menu-item index="/artifact/web">Web设计 / H5</el-menu-item>
 						<el-menu-item index="/artifact/phone">安卓 / 苹果 / 小程序</el-menu-item>
@@ -30,11 +30,10 @@
 		<!-- 主体 -->
 		<section class="flex-between">
 			<!-- 侧边栏 -->
-			<el-menu class="side-bar" :default-active="menu.menu2.activeIndex"
+			<el-menu :style="mainPartStyle" class="side-bar" :default-active="menu.menu2.activeIndex"
 				:collapse="menu.menu2.isCollapse" background-color="#06396d" text-color="#fff"
 				active-text-color="#ffd04b" :router="true">
-				<el-image src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-					fit="cover">
+				<el-image :src="picUrl" fit="cover">
 				</el-image>
 				<el-menu-item index="home">
 					<i class="el-icon-s-home"></i>
@@ -51,7 +50,7 @@
 						<el-menu-item index="/artifact/sitcom">情景剧</el-menu-item>
 					</el-menu-item-group>
 					<el-menu-item-group title="艺术">
-						<el-menu-item index="/artifact/host">主持 / 演讲</el-menu-item>
+						<el-menu-item index="/artifact/host">主持 / 演讲 / PPT</el-menu-item>
 						<el-submenu index="art">
 							<template slot="title">歌 / 舞 / 画 / 乐器</template>
 							<el-menu-item index="/artifact/art#sing">唱歌</el-menu-item>
@@ -79,12 +78,13 @@
 					<span slot="title">隐藏</span>
 				</el-menu-item>
 			</el-menu>
-			<router-view class="main-part"></router-view>
+			<router-view :style="mainPartStyle" class="main-part"></router-view>
 		</section>
 	</div>
 </template>
 
 <script>
+	import pic from "@/assets/logo.png"
 	export default {
 		name: 'app',
 		components: {
@@ -98,7 +98,11 @@
 						isCollapse: true
 					}
 				},
-
+				mainPartStyle: {
+					height: parseInt(window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - 60 + "px",
+					overflow: "auto"
+				},
+				picUrl: pic
 			}
 		},
 		methods: {
@@ -112,6 +116,9 @@
 <style>
 	* {
 		margin: 0;
+	}
+	body {
+		overflow: hidden;
 	}
 	#app {
 		font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -146,11 +153,10 @@
 		color: white;
 	}
 	.side-bar {
-		height: 100vh;
 		text-align: justify;
 	}
 	.side-bar:not(.el-menu--collapse) {
-		width: 200px;
+		width: 300px;
 	}
 	.main-part {
 		max-width: 100vw;
