@@ -5,7 +5,7 @@
 			<el-button style="float: right; padding: 3px 0" type="text" @click="handlePageChange(1)">刷新
 			</el-button>
 		</div>
-		<el-row type="flex" justify="center">
+		<el-row type="flex" justify="center" :style="current.style">
 			<el-col :span="22">
 				<el-timeline>
 					<el-timeline-item :timestamp="data.date" placement="top"
@@ -13,7 +13,7 @@
 						<el-card>
 							<el-descriptions title="作品信息">
 								<el-descriptions-item :label="k" v-for="(v,k) in data" :key="v">
-									<el-tag size="small">{{v}}</el-tag>
+									<el-tag size="small" class="tag">{{v}}</el-tag>
 								</el-descriptions-item>
 								<template slot="extra">
 									<el-link :href="data.link" target="_blank" type="success">链接</el-link>
@@ -41,13 +41,18 @@
 				current: {
 					activeNames: "",
 					mediaType: this.$route.params.type,
-					arifactData: [{
-						name: "1",
-						description: "11",
-						link: "111",
-						date: "1111",
-						type: 'film'
-					}],
+					arifactData: [
+						// {
+						// 	name: "1",
+						// 	description: "11",
+						// 	link: "111",
+						// 	date: "1111",
+						// 	type: 'film'
+						// }
+					],
+					style: {
+						height: parseInt(window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - 60 + "px",
+					}
 				},
 				page: {
 					total: 1,
@@ -86,4 +91,9 @@
 	}
 </script>
 <style scoped>
+	.tag {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 200px;
+	}
 </style>

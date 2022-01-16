@@ -20,6 +20,7 @@
         select *
         from artifact
         where type = #{codition}
+        order by id desc
     </select>
 
     <insert id="createArtifact" parameterType="com.ervin.newmediaspring.po.ArtifactPO">

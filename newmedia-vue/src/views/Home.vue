@@ -43,14 +43,16 @@
 			return {
 				current: {
 					activeNames: 1,
-					userData: [{
-						id: "1",
-						name: 'admin1',
-						password: 'admin2',
-						authority: 'admin3',
-						job: "superadmin4",
-						description: "superadmin5"
-					}],
+					userData: [
+						// {
+						// 	id: "1",
+						// 	name: 'admin1',
+						// 	password: 'admin2',
+						// 	authority: 'admin3',
+						// 	job: "superadmin4",
+						// 	description: "superadmin5"
+						// }
+					],
 					picLis: [pic]
 				},
 				page: {

@@ -37,7 +37,7 @@
 				</el-button-group>
 			</section>
 			<br />
-			<el-table :data="table.tableData" stripe border>
+			<el-table :data="table.tableData" stripe border :height="current.style.height">
 				<el-table-column :prop="table.tableCol.row0.prop" :label="table.tableCol.row0.label"
 					width="180">
 				</el-table-column>
@@ -117,22 +117,25 @@
 					msgboardTableCol: msgboardTableCol,
 				},
 				table: {
-					tableData: [{
-						id: "1",
-						name: 'admin1',
-						password: 'admin2',
-						authority: 'admin3',
-						job: "superadmin4",
-						description: "superadmin5"
-					}],
-					tableCol: {
-						row0: { label: "ID", prop: "id" },
-						row1: { label: '用户名', prop: "name" },
-						row2: { label: '密码', prop: "password" },
-						row3: { label: '权限', prop: "authority" },
-						row4: { label: '职责', prop: "job" },
-						row5: { label: '描述', prop: "description" }
-					}
+					tableData: [
+						// {
+						// 	id: "1",
+						// 	name: 'admin1',
+						// 	password: 'admin2',
+						// 	authority: 'admin3',
+						// 	job: "superadmin4",
+						// 	description: "superadmin5"
+						// }
+					],
+					tableCol: userTableCol
+					// {
+					// 	row0: { label: "ID", prop: "id" },
+					// 	row1: { label: '用户名', prop: "name" },
+					// 	row2: { label: '密码', prop: "password" },
+					// 	row3: { label: '权限', prop: "authority" },
+					// 	row4: { label: '职责', prop: "job" },
+					// 	row5: { label: '描述', prop: "description" }
+					// }
 				},
 				current: {
 					activeName: 'user',
@@ -141,7 +144,7 @@
 					form: { field1: "", field2: "", field3: "", field4: "", field5: "" },
 					operation: "",
 					loginForm: { name: "", password: "" },
-					displayLogin: true,
+					displayLogin: !sessionStorage.getItem("isAdmin"),
 					style: {
 						height: parseInt(window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - 60 + "px",
 						alignItems: "center"
@@ -155,15 +158,20 @@
 			}
 		},
 		mounted() {
+			if (this.current.displayLogin === false) {
+				this.handlePageChange(1)
+			}
 		},
 		methods: {
 			loginCheck() {
 				userLoginCheck(this.current.loginForm).then(res => {
 					if (res.data.data === true) {
-						this.current.displayLogin = false
+						sessionStorage.setItem("isAdmin", true)
+						this.current.displayLogin = !sessionStorage.getItem("isAdmin")
 						this.handlePageChange(1)
 					} else {
-						this.current.displayLogin = true
+						sessionStorage.setItem("isAdmin", false)
+						this.current.displayLogin = !sessionStorage.getItem("isAdmin")
 						this.$message({
 							message: '登陆失败',
 							type: 'warning'
